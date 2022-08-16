@@ -1,0 +1,66 @@
+<form #personForm="ngForm" (ngSubmit)="person(personForm)">
+  
+    <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput name="firstname" placeholder="Enter first name" [(ngModel)]="firstname" #firstName="ngModel"  required >
+    <mat-error>First name <strong>required</strong></mat-error>
+  </mat-form-field><br>
+  
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Middle Name</mat-label>
+    <input type="text" matInput name="middlename" #middleName="ngModel" placeholder="Enter middle name" ngModel>
+  </mat-form-field><br>
+  
+
+<mat-form-field appearance="fill">
+  <mat-label>Last Name</mat-label>
+    <input matInput name="lastname" placeholder="Enter last name" ngModel #lastName="ngModel" required >
+    <mat-error>Last name <strong>required</strong></mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Department</mat-label>
+    <mat-select [(ngModel)]="Department" name="department">
+      <mat-option *ngFor="let dep of department" [value]="dep.value">
+        {{dep.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Gender</mat-label>
+    <mat-select [(ngModel)]="Gender" name="gender">
+      <mat-option *ngFor="let gen of gender" [value]="gen.value">
+        {{gen.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>DOB</mat-label>
+    <input required type="date" matInput placeholder="DOB" [(ngModel)]="dob" name="dob">
+    <mat-error>Cannot be<strong> empty</strong></mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Address1</mat-label>
+      <input matInput name="address" placeholder="Enter address" ngModel #Address="ngModel" required >
+      <mat-error>Address <strong>required</strong></mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Pincode</mat-label>
+        <input matInput type="number" name="pincode" placeholder="Enter pincode" ngModel #Pincode="ngModel" required >
+        
+        <mat-error>Pincode <strong>required</strong></mat-error>
+      </mat-form-field><br>
+
+    <button (click)="pop()" mat-raised-button color="primary">Submit</button>
+ 
+</form><br>
+
+
+
+
+
